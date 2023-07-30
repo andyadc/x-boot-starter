@@ -14,6 +14,8 @@
         <module>whitelist-spring-boot-starter</module>
         <module>whitelist-spring-boot-starter-test</module>
         <module>ratelimiter-spring-boot-starter-test</module>
+        <module>methodext-spring-boot-starter</module>
+        <module>methodext-spring-boot-starter-test</module>
     </modules>
 
     <properties>
