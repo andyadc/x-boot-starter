@@ -16,6 +16,7 @@
         <module>ratelimiter-spring-boot-starter-test</module>
         <module>methodext-spring-boot-starter</module>
         <module>methodext-spring-boot-starter-test</module>
+        <module>abatis</module>
     </modules>
 
     <properties>
