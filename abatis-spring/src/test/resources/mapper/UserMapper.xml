@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper namespace="com.andyadc.abatis.spring.test.mapper.UserMapper">
+
+    <select id="selectByUserId"
+            parameterType="java.lang.Long"
+            resultType="com.andyadc.abatis.spring.test.entity.User">
+        select
+        *
+        from user
+        where user_id = #{userId}
+    </select>
+
+    <select id="selectUserList"
+            parameterType="com.andyadc.abatis.spring.test.entity.User"
+            resultType="com.andyadc.abatis.spring.test.entity.User">
+        select
+        *
+        from user
+
+    </select>
+
+</mapper>
