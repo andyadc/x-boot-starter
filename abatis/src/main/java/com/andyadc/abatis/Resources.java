@@ -1,4 +1,4 @@
-package com.andydc.abatis;
+package com.andyadc.abatis;
 
 import java.io.IOException;
 import java.io.InputStream;

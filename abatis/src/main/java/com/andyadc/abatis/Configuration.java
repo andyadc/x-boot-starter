@@ -1,4 +1,4 @@
-package com.andydc.abatis;
+package com.andyadc.abatis;
 
 import java.sql.Connection;
 import java.util.Map;

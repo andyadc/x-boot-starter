@@ -1,4 +1,4 @@
-package com.andydc.abatis;
+package com.andyadc.abatis;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -44,10 +44,12 @@ public class SqlSessionFactoryBuilder {
         Element element = (Element) list.get(0);
         List<Node> nodeList = element.content();
         for (Node node : nodeList) {
-            Element e = (Element) node;
-            String name = e.attributeValue("name");
-            String value = e.attributeValue("value");
-            dataSource.put(name, value);
+            if (node instanceof Element) {
+                Element e = (Element) node;
+                String name = e.attributeValue("name");
+                String value = e.attributeValue("value");
+                dataSource.put(name, value);
+            }
         }
         return dataSource;
     }
@@ -69,6 +71,9 @@ public class SqlSessionFactoryBuilder {
         Element element = (Element) list.get(0);
         List<Node> nodeList = element.content();
         for (Node node : nodeList) {
+            if (!(node instanceof Element)) {
+                continue;
+            }
             Element e = (Element) node;
             String resource = e.attributeValue("resource");
 
