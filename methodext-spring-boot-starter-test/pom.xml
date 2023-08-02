@@ -11,7 +11,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.andydc.starter</groupId>
+    <groupId>com.andyadc.starter</groupId>
     <artifactId>methodext-spring-boot-starter-test</artifactId>
     <version>1.0.0</version>
 
@@ -27,7 +27,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.andydc.starter</groupId>
+            <groupId>com.andyadc.starter</groupId>
             <artifactId>methodext-spring-boot-starter</artifactId>
             <version>1.0.0</version>
         </dependency>

@@ -11,7 +11,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.andydc.starter</groupId>
+    <groupId>com.andyadc.starter</groupId>
     <artifactId>ratelimiter-spring-boot-starter</artifactId>
     <version>1.0.0</version>
 
@@ -35,7 +35,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>32.1.1-jre</version>
+            <version>32.1.2-jre</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.fastjson2</groupId>
