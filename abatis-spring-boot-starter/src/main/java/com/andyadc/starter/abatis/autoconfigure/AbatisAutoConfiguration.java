@@ -72,7 +72,7 @@ public class AbatisAutoConfiguration implements InitializingBean {
 
         @Override
         public void setEnvironment(Environment environment) {
-            this.basePackage = environment.getProperty("mybatis.datasource.base-dao-package");
+            this.basePackage = environment.getProperty("abatis.base-mapper-package");
         }
     }
 }

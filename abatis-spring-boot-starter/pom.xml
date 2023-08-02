@@ -11,7 +11,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.andydc.starter</groupId>
+    <groupId>com.andyadc.starter</groupId>
     <artifactId>abatis-spring-boot-starter</artifactId>
     <version>1.0.0</version>
 

@@ -31,7 +31,9 @@ public class DefaultSqlSession implements SqlSession {
             PreparedStatement preparedStatement = connection.prepareStatement(xNode.getSql());
             ResultSet resultSet = preparedStatement.executeQuery();
             List<T> objects = resultSet2Obj(resultSet, Class.forName(xNode.getResultType()));
-            return objects.get(0);
+            if (objects.size() > 0) {
+                return objects.get(0);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -47,7 +49,9 @@ public class DefaultSqlSession implements SqlSession {
             buildParameter(preparedStatement, parameter, parameterMap);
             ResultSet resultSet = preparedStatement.executeQuery();
             List<T> objects = resultSet2Obj(resultSet, Class.forName(xNode.getResultType()));
-            return objects.get(0);
+            if (objects.size() > 0) {
+                return objects.get(0);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -148,6 +152,7 @@ public class DefaultSqlSession implements SqlSession {
         }
     }
 
+    @SuppressWarnings({"unchecked"})
     private <T> List<T> resultSet2Obj(ResultSet resultSet, Class<?> clazz) {
         List<T> list = new ArrayList<>();
         try {
@@ -158,8 +163,20 @@ public class DefaultSqlSession implements SqlSession {
                 T obj = (T) clazz.newInstance();
                 for (int i = 1; i <= columnCount; i++) {
                     Object value = resultSet.getObject(i);
+                    if (value == null) {
+                        continue;
+                    }
+
                     String columnName = metaData.getColumnName(i);
-                    String setMethod = "set" + columnName.substring(0, 1).toUpperCase() + columnName.substring(1);
+
+                    StringBuilder methodName = new StringBuilder();
+                    String[] split = columnName.split("_");
+                    for (String item : split) {
+                        String s = item.substring(0, 1).toUpperCase() + item.substring(1);
+                        methodName.append(s);
+                    }
+                    String setMethod = "set" + methodName.toString();
+
                     Method method;
                     if (value instanceof Timestamp) {
                         method = clazz.getMethod(setMethod, Date.class);
