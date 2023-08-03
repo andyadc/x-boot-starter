@@ -24,6 +24,7 @@
         <module>dbrouter-spring-boot-starter</module>
         <module>redis-spring-boot-starter</module>
         <module>schedule-spring-boot-starter</module>
+        <module>redis-spring-boot-starter-test</module>
     </modules>
 
     <properties>
