@@ -1,20 +1,25 @@
 server:
   port: 8080
 
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*Mapper.xml
+
 # 路由配置
 router:
   jdbc:
     datasource:
       dbCount: 2
-      tbCount: 4
+      tbCount: 3
       list: db01,db02
       db01:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/idea?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+        url: jdbc:mysql://localhost:3306/dbrouter_01?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
         username: root
         password: andyadc
       db02:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/idea?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+        url: jdbc:mysql://localhost:3306/dbrouter_02?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
         username: root
         password: andyadc
+

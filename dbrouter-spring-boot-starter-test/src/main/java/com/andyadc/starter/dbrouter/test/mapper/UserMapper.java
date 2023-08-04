@@ -2,14 +2,14 @@ package com.andyadc.starter.dbrouter.test.mapper;
 
 import com.andyadc.starter.dbrouter.annotation.DBRouter;
 import com.andyadc.starter.dbrouter.test.entity.User;
+import org.apache.ibatis.annotations.Mapper;
 
-import java.util.List;
-
+@Mapper
 public interface UserMapper {
 
     @DBRouter(key = "userId")
-    User selectByUserId(Long userId);
+    User selectByUserId(User user);
 
     @DBRouter(key = "userId")
-    List<User> selectUserList(User user);
+    int insert(User user);
 }

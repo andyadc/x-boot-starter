@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.andyadc.starter.dbrouter.test.mapper.UserMapper">
+
+    <select id="selectByUserId"
+            parameterType="java.lang.Long"
+            resultType="com.andyadc.starter.dbrouter.test.entity.User">
+        select
+        *
+        from user_${tbIdx}
+        where user_id = #{userId}
+    </select>
+
+    <insert id="insert" parameterType="com.andyadc.starter.dbrouter.test.entity.User">
+        insert into
+        user_${tbIdx}
+        (user_id, name, nickname, age, password, create_time, update_time)
+        values
+        (#{userId}, #{name}, #{nickname}, #{age}, #{password}, now(), now())
+    </insert>
+
+</mapper>

@@ -1,8 +1,10 @@
 package com.andyadc.starter.dbrouter.test.entity;
 
+import com.andyadc.starter.dbrouter.DBRouterBase;
+
 import java.time.LocalDateTime;
 
-public class User {
+public class User extends DBRouterBase {
 
     private Long id;
     private Long userId;
